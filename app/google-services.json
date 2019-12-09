@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "163900622885",
+    "firebase_url": "https://amikomup-53f15.firebaseio.com",
+    "project_id": "amikomup-53f15",
+    "storage_bucket": "amikomup-53f15.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:163900622885:android:46e1f5eb9be07920af57cc",
+        "android_client_info": {
+          "package_name": "com.kardusinfo.amikomup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "163900622885-6r6i002h3m1705clnamqtq2cmnsm8ru8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6iyjTP8EsiWkh8eDQ7ZlHR2ZnEvyzY8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "163900622885-6r6i002h3m1705clnamqtq2cmnsm8ru8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

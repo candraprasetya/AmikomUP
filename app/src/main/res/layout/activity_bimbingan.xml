@@ -132,7 +132,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/ic_launcher"
                 android:gravity="start"
                 android:hint="hint"
                 android:inputType="text"

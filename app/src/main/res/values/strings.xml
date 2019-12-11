@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AmikomUP</string>
+    <string name="btnboking">Booking</string>
+    <string name="btnstatus">Status</string>
 </resources>

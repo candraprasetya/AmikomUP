@@ -4,28 +4,23 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_first.*
+import kotlinx.android.synthetic.main.activity_welcome.*
 
-class FirstActivity : AppCompatActivity() {
+class WelcomeActivity : AppCompatActivity() {
 
-    lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mAuth = FirebaseAuth.getInstance()
-        checkUser()
 
-        setContentView(R.layout.activity_first)
+
+        setContentView(R.layout.activity_welcome)
 
 
         buttonStart.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
+            finish()
         }
     }
 
-    private fun checkUser() {
-        if(mAuth.currentUser != null){
-            startActivity(Intent(this, MainActivity::class.java))
-        }
-    }
+
 }

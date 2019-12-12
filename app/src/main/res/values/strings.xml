@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AmikomUP</string>
+    <string name="welcome_to_amikomup">Welcome to AmikomUP</string>
+    <string name="all_in_one_application">all in one application</string>
+    <string name="let_s_start_to_create_your_aimkomup_account">Let\'s start to create your AimkomUP Account!</string>
+    <string name="already_have_an_account_sign_in">Already have an account? Sign In</string>
+    <string name="by_tapping_the_arrow_button_you_accept_amikomup_s_term_and_conditions_of_use_and_privacy_policy">By tapping the arrow button you accept AmikomUP\'s Term and Conditions of Use and Privacy Policy</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="don_t_have_an_accounr_sign_up">Don\'t have an accounr? Sign Up</string>
 </resources>

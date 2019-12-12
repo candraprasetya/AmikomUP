@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "163900622885-hnnav01pss6651ms797ii18rscpg22s3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kardusinfo.amikomup",
+            "certificate_hash": "16c0cac5b3343c9dbe5cddec14b49ac551c99937"
+          }
+        },
+        {
           "client_id": "163900622885-6r6i002h3m1705clnamqtq2cmnsm8ru8.apps.googleusercontent.com",
           "client_type": 3
         }

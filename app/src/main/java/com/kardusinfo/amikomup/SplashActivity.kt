@@ -12,6 +12,7 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        checkUser()
         setContentView(R.layout.activity_splash)
         mAuth = FirebaseAuth.getInstance()
 
@@ -19,7 +20,6 @@ class SplashActivity : AppCompatActivity() {
             // This method will be executed once the timer is over
             // Start your app main activity
 
-            checkUser()
 
             // close this activity
             finish()

@@ -16,11 +16,18 @@ class BimbinganActivity : AppCompatActivity() {
 
         buttonToDashboard.setOnClickListener {
             startActivity(Intent(this,DashboardActivity::class.java))
+        getUserData()
+        }
 
         buttonSignOut.setOnClickListener {
             auth.signOut()
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
+    }
+
+    private fun getUserData(){
+        val emailOfUser = auth.currentUser!!.email
+        userEmail.text = emailOfUser
     }
 }

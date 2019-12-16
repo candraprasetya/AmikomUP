@@ -8,31 +8,23 @@ import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : AppCompatActivity() {
 
-    lateinit var mAuth: FirebaseAuth
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        checkUser()
-        setContentView(R.layout.activity_splash)
         mAuth = FirebaseAuth.getInstance()
-
-        Handler().postDelayed({
-            // This method will be executed once the timer is over
-            // Start your app main activity
-
-
-            // close this activity
-            finish()
-        }, 3000)
-
-
-
+        checkUser()
     }
+
     private fun checkUser() {
-        if(mAuth.currentUser != null){
+        if (mAuth.currentUser != null) {
             startActivity(Intent(this, MainActivity::class.java))
-        }else{
-            startActivity(Intent(this, WelcomeActivity::class.java))
+        } else {
+            setContentView(R.layout.activity_splash)
+            Handler().postDelayed({
+                startActivity(Intent(this, WelcomeActivity::class.java))
+                finish()
+            }, 3000)
         }
     }
 }

@@ -15,14 +15,14 @@ import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
     private val firebaseAuth = FirebaseAuth.getInstance()
-
+    private lateinit var loadingDialog: LoadingDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE or WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
         createAnimation()
-
+        loadingDialog = LoadingDialog()
         buttonLogin.setOnClickListener {
             loginEmailPassword()
         }
@@ -35,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         buttonBack.setOnClickListener {
+            startActivity(Intent(this, WelcomeActivity::class.java))
             finish()
         }
     }
@@ -42,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
     private fun createAnimation() {
         val fadeIn = AlphaAnimation(0f, 1f).apply {
             interpolator = BounceInterpolator()
-            duration = 1100L
+            duration = 1400L
         }
 
         layoutInputPassword.animation = fadeIn
@@ -58,18 +59,24 @@ class LoginActivity : AppCompatActivity() {
             Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
             return
         }
-        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
-            if (!it.isSuccessful) { return@addOnCompleteListener
-                startActivity(Intent(this, LoginActivity::class.java))
-                finish()
-            } else
-                Toast.makeText(this, "Succesfully Login", Toast.LENGTH_SHORT).show()
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
-        }.addOnFailureListener {
-            Log.d("FIREBASE", "Failed Login : ${it.message}")
-            Toast.makeText(this, "Email/Password incorrect", Toast.LENGTH_SHORT).show()
-        }
+        loadingDialog.show(supportFragmentManager, LoadingDialog.TAG)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    loadingDialog.dismiss()
+                    Toast.makeText(this, "Succesfully Login", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, MainActivity::class.java))
+                    finish()
+                }
+            }.addOnFailureListener {
+                loadingDialog.dismiss()
+                Log.d("FIREBASE", "Failed Login : ${it.message}")
+                Toast.makeText(this, it.message.toString(), Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    override fun onBackPressed() {
+
     }
 
 }

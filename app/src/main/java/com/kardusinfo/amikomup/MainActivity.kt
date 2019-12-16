@@ -14,11 +14,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        getUserData()
 
         buttonSignOut.setOnClickListener {
             auth.signOut()
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
+    }
+
+    private fun getUserData(){
+        val emailOfUser = auth.currentUser!!.email
+        userEmail.text = emailOfUser
     }
 }

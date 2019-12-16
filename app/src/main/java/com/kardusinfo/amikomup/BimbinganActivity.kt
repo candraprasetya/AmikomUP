@@ -1,8 +1,8 @@
 package com.kardusinfo.amikomup
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,8 +26,9 @@ class BimbinganActivity : AppCompatActivity() {
         }
     }
 
-    private fun getUserData(){
+    private fun getUserData() {
         val emailOfUser = auth.currentUser!!.email
         userEmail.text = emailOfUser
+
     }
 }

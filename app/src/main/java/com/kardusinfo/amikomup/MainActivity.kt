@@ -1,8 +1,8 @@
 package com.kardusinfo.amikomup
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -14,13 +14,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        buttonToDashboard.setOnClickListener {
-            startActivity(Intent(this,DashboardActivity::class.java))
+        buttonBimbingan.setOnClickListener {
+            startActivity(Intent(this, BimbinganActivity::class.java))
+        getUserData()
+        }
 
         buttonSignOut.setOnClickListener {
             auth.signOut()
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
+    }
+
+    private fun getUserData() {
+        val emailOfUser = auth.currentUser!!.email
+        userEmail.text = emailOfUser
+
     }
 }

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity_stauts_booking">
+
+    <ImageView
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/header" />
+
+    <TextView
+        android:id="@+id/headertxt"
+        style="@style/TextAppearance.MaterialComponents.Headline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Bimbingan Up"
+        android:textColor="#fff" />
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headertxt"
+        android:padding="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btnboking"
+            android:textColor="@color/colorPrimary"
+            app:backgroundTint="#ffff">
+
+        </com.google.android.material.button.MaterialButton>
+
+        <com.google.android.material.button.MaterialButton
+
+            android:id="@+id/material_text_button"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@id/btn"
+            android:text="@string/btnstatus"
+            android:textColor="#ffff"
+            app:strokeColor="#fff">
+
+        </com.google.android.material.button.MaterialButton>
+
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="70dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Desember 2019"
+                app:autoSizeTextType="uniform"></com.google.android.material.textview.MaterialTextView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardstatus"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="30dp"
+                android:accessibilityTraversalBefore="@id/txtdate"
+                android:paddingStart="30dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txtdate_Sttus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="Senin 20 Desember 2019" />
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardstatus2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="30dp"
+                android:accessibilityTraversalBefore="@id/txtdate"
+                android:paddingStart="30dp">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txtdate_Sttus2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="Senin 20 Desember 2019" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

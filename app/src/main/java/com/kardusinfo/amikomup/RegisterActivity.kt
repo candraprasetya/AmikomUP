@@ -73,7 +73,7 @@ class RegisterActivity : AppCompatActivity() {
                 startActivity(
                     Intent(
                         this,
-                        MainActivity::class.java
+                        DashboardCandra::class.java
                     ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 )
                 val user = auth.currentUser

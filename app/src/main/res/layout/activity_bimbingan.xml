@@ -82,8 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nama Dosen"
-                app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                app:startIconDrawable="@drawable/icon_people">
+                app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -101,8 +100,7 @@
                 android:layout_below="@id/edtdosen"
                 android:layout_marginTop="20dp"
                 android:hint="Mata Kuliah"
-                app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                app:startIconDrawable="@drawable/icon_book">
+                app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -118,8 +116,7 @@
                 android:layout_below="@id/edtmatkul"
                 android:layout_marginTop="20dp"
                 android:hint="Calender"
-                app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                app:startIconDrawable="@drawable/icon_calander">
+                app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -135,8 +132,7 @@
                 android:layout_below="@id/edtcalnder"
                 android:layout_marginTop="20dp"
                 android:hint="Detail Bimbingan"
-                app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption"
-                app:startIconDrawable="@drawable/icon_text">
+                app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"

@@ -14,7 +14,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        getUserData()
+        buttonBimbingan.setOnClickListener {
+            startActivity(Intent(this, BimbinganActivity::class.java))
+            getUserData()
+            finish()
+        }
 
         buttonSignOut.setOnClickListener {
             auth.signOut()
@@ -26,6 +30,9 @@ class MainActivity : AppCompatActivity() {
     private fun getUserData() {
         val emailOfUser = auth.currentUser!!.email
         userEmail.text = emailOfUser
+    }
 
+    override fun onBackPressed() {
+        finish()
     }
 }

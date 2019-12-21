@@ -3,14 +3,12 @@ package com.kardusinfo.amikomup
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.animation.AlphaAnimation
-import android.view.animation.DecelerateInterpolator
+import android.view.WindowManager
+import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
-import android.view.WindowManager
-import android.view.animation.BounceInterpolator
-import android.widget.Toast
 
 
 class LoginActivity : AppCompatActivity() {
@@ -22,7 +20,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE or WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE)
         createAnimation()
+
         loadingDialog = LoadingDialog()
+
         buttonLogin.setOnClickListener {
             loginEmailPassword()
         }
@@ -35,20 +35,22 @@ class LoginActivity : AppCompatActivity() {
         }
 
         buttonBack.setOnClickListener {
-            startActivity(Intent(this, WelcomeActivity::class.java))
             finish()
         }
     }
 
     private fun createAnimation() {
-        val fadeIn = AlphaAnimation(0f, 1f).apply {
-            interpolator = BounceInterpolator()
-            duration = 1400L
-        }
+        val topToBottom = AnimationUtils.loadAnimation(this, R.anim.top_to_bottom)
+        val scaleToBig = AnimationUtils.loadAnimation(this, R.anim.scale_to_big)
+        val bottomToTop = AnimationUtils.loadAnimation(this, R.anim.bottom_to_top)
 
-        layoutInputPassword.animation = fadeIn
-        layoutInputPassword.animation = fadeIn
-        buttonLogin.animation = fadeIn
+        buttonBack.startAnimation(scaleToBig)
+        Headline.startAnimation(topToBottom)
+        subtitle.startAnimation(topToBottom)
+        layoutInputEmailAddress.startAnimation(topToBottom)
+        layoutInputPassword.startAnimation(topToBottom)
+        buttonToRegister.startAnimation(bottomToTop)
+        buttonLogin.startAnimation(bottomToTop)
     }
 
     private fun loginEmailPassword() {
@@ -56,16 +58,23 @@ class LoginActivity : AppCompatActivity() {
         val password = inputPassword.text.toString()
 
         if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Please Fill out All Field", Toast.LENGTH_SHORT).show()
             return
         }
+
+
         loadingDialog.show(supportFragmentManager, LoadingDialog.TAG)
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     loadingDialog.dismiss()
                     Toast.makeText(this, "Succesfully Login", Toast.LENGTH_SHORT).show()
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(
+                        Intent(
+                            this,
+                            DashboardCandra::class.java
+                        ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    )
                     finish()
                 }
             }.addOnFailureListener {

@@ -21,6 +21,15 @@ class DashboardCandra : AppCompatActivity() {
         val userId = auth.currentUser!!.uid
         getUserData(userId)
 
+        btnSchedule.setOnClickListener {
+            startActivity(
+                Intent(
+                    this,
+                    ScheduleActivity::class.java
+                )
+            )
+        }
+
         buttonSignOut.setOnClickListener {
             auth.signOut()
             startActivity(

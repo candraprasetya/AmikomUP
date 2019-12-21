@@ -2,6 +2,7 @@ package com.kardusinfo.amikomup
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_bimbingan.*
 
 class BimbinganActivity : AppCompatActivity() {
 
@@ -9,6 +10,8 @@ class BimbinganActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bimbingan)
 
+        btnBookingState.setOnClickListener {
+        }
     }
 
 }

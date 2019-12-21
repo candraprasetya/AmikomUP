@@ -33,28 +33,25 @@
         android:padding="20dp">
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn"
-            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:id="@+id/btnBookingState"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Booking"
             android:textColor="@color/colorPrimary"
-            app:backgroundTint="#ffff" >
-
+            app:backgroundTint="#ffff">
         </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
-
-            android:id="@+id/material_text_button"
+            android:id="@+id/btnStatusBookingState"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_marginLeft="20dp"
-            android:layout_toEndOf="@id/btn"
+            android:layout_toEndOf="@id/btnBookingState"
             android:text="Status"
             android:textColor="#ffff"
-            app:strokeColor="#fff" >
-
+            app:strokeColor="#fff">
         </com.google.android.material.button.MaterialButton>
 
 
@@ -120,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/edtmatkul"
                 android:layout_marginTop="20dp"
-                android:hint="calender"
+                android:hint="Calender"
                 app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 app:startIconDrawable="@drawable/icon_calander">
 
@@ -137,20 +134,22 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/edtcalnder"
                 android:layout_marginTop="20dp"
-                android:hint="detail bimbingan"
+                android:hint="Detail Bimbingan"
                 app:hintTextAppearance="@style/TextAppearance.MaterialComponents.Caption"
                 app:startIconDrawable="@drawable/icon_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:maxLength="30"/>
+                    android:inputType="textMultiLine"
+                    android:maxLines="5" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnbooking"
+                style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/edtdetail"

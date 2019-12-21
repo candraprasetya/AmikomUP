@@ -46,6 +46,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/buttonBack" />
 
+
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/subtitleRegister"
                 style="@style/TextAppearance.MaterialComponents.Caption"
@@ -60,17 +61,38 @@
                 app:layout_constraintTop_toBottomOf="@id/HeadlineRegister" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/layoutInputEmailAddress"
+                android:id="@+id/layoutInputUsername"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="60dp"
                 android:layout_marginEnd="40dp"
-                android:hint="@string/email_address"
+                android:hint="@string/username"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/subtitleRegister"
+                app:startIconDrawable="@drawable/user">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layoutInputEmailAddress"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:hint="@string/email_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layoutInputUsername"
                 app:startIconDrawable="@drawable/mail">
 
                 <com.google.android.material.textfield.TextInputEditText

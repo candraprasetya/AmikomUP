@@ -1,9 +1,9 @@
 package com.kardusinfo.amikomup
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : AppCompatActivity() {
@@ -18,7 +18,8 @@ class SplashActivity : AppCompatActivity() {
 
     private fun checkUser() {
         if (mAuth.currentUser != null) {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, DashboardCandra::class.java))
+            finish()
         } else {
             setContentView(R.layout.activity_splash)
             Handler().postDelayed({

@@ -40,7 +40,6 @@
             android:text="Booking"
             android:textColor="@color/colorPrimary"
             app:backgroundTint="#ffff">
-
         </com.google.android.material.button.MaterialButton>
 
         <com.google.android.material.button.MaterialButton
@@ -53,7 +52,6 @@
             android:text="Status"
             android:textColor="#ffff"
             app:strokeColor="#fff">
-
         </com.google.android.material.button.MaterialButton>
 
 

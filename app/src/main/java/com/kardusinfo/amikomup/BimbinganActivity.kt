@@ -12,7 +12,6 @@ class BimbinganActivity : AppCompatActivity() {
 
         btnBookingState.setOnClickListener {
         }
-
     }
 
 }

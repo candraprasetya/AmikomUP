@@ -18,12 +18,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/placeholder"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/profileUser"
+        app:layout_constraintEnd_toEndOf="@id/profileUser"
+        app:layout_constraintStart_toStartOf="@id/profileUser"
+        app:layout_constraintTop_toTopOf="@id/profileUser"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading" />
+
     <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
         android:id="@+id/profileUser"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
+        android:elevation="20dp"
         android:layout_marginEnd="40dp"
-        android:src="@drawable/logo"
         app:civ_border_color="@color/colorPrimaryDark"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/header"
@@ -31,13 +43,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:background="@drawable/username_background"
         android:id="@+id/usernameText"
+        android:paddingStart="12dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="6dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="14dp"
-        android:text="Username"
-        android:textSize="20sp"
+        android:text=""
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/profileUser" />
@@ -46,10 +63,10 @@
         android:id="@+id/nimText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="16dp"
-        android:text="17.11.1370"
-        android:textSize="12sp"
+        android:text=""
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/profileUser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/usernameText" />

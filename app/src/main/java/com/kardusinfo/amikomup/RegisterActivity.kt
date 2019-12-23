@@ -54,6 +54,7 @@ class RegisterActivity : AppCompatActivity() {
         layoutInputPassword.startAnimation(topToBottom)
         buttonToLogin.startAnimation(bottomToTop)
         buttonRegister.startAnimation(bottomToTop)
+        layoutNim.startAnimation(topToBottom)
     }
 
 
@@ -61,8 +62,14 @@ class RegisterActivity : AppCompatActivity() {
         val username = inputUsername.text.toString()
         val email = inputEmailAddress.text.toString()
         val password = inputPassword.text.toString()
+        val angkatan = inputAngkatan.text.toString()
+        val prodi = inputProdi.text.toString()
+        val nomer = inputNomor.text.toString()
+        val fotoUrl =
+            "http://www.amikom.ac.id/public/fotomhs/20${angkatan}/${angkatan}_${prodi}_${nomer}.jpg"
+        val nim = "${angkatan}.${prodi}.${nomer}"
 
-        if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
+        if (email.isEmpty() || password.isEmpty() || username.isEmpty() || angkatan.isEmpty() || prodi.isEmpty() || nomer.isEmpty()) {
             Toast.makeText(this, "Please Fill out All Field", Toast.LENGTH_SHORT).show()
             return
         }
@@ -78,7 +85,7 @@ class RegisterActivity : AppCompatActivity() {
                 )
                 val user = auth.currentUser
                 if (user != null) {
-                    createNewDataUser(user.uid.toString(), username, email)
+                    createNewDataUser(user.uid, username, email, nim, fotoUrl, password)
                 }
                 Log.d("FIREBASE REGISTER", " $user Account Created")
                 finish()
@@ -88,14 +95,25 @@ class RegisterActivity : AppCompatActivity() {
                 loadingDialog.dismiss()
                 Log.e("FIREBASE REGISTER", "Failed Login : ${it.message}")
                 Toast.makeText(this, it.message.toString(), Toast.LENGTH_SHORT).show()
+
             }
 
     }
 
-    private fun createNewDataUser(uid: String, username: String, email: String) {
+    private fun createNewDataUser(
+        uid: String,
+        username: String,
+        email: String,
+        nim: String,
+        foto: String,
+        password: String
+    ) {
         val user = hashMapOf(
             "username" to username,
-            "email" to email
+            "email" to email,
+            "nim" to nim,
+            "profileImage" to foto,
+            "password" to password
         )
 
         db.collection("users")

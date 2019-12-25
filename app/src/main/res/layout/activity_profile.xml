@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#fafafa"
     android:layout_height="match_parent"
     tools:context=".DashboardActivity">
 
@@ -22,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/dashtext"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -64,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="115dp"
             android:layout_marginTop="43dp"
-            android:text="|   Informatika 07"
+            android:text="|  Informatika 07"
             android:textColor="#FAFAFA"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -83,89 +84,121 @@
         android:text="Profile Mahasiswa"
         android:textColor="#FAFAFA" />
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/akun"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/headerKotak"
-        android:layout_marginStart="20dp"
+        android:layout_centerVertical="true"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:background="@color/colorWhite"
         android:padding="10dp">
 
         <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/iconUser"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_alignParentStart="true"
             android:src="@drawable/icon_user" />
 
         <TextView
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:text="Akun"
+            android:layout_toEndOf="@id/iconUser"
+            android:text="Ubah profile"
             android:textSize="18sp" />
 
+        <ImageView
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_next"
+            android:layout_alignParentEnd="true"
+            android:layout_width="16dp"
+            android:layout_height="16dp" />
 
-    </LinearLayout>
+    </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/notif"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/akun"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorWhite"
         android:padding="10dp">
 
         <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/iconNotif"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@drawable/icon_notification" />
+            android:layout_alignParentStart="true"
+            android:src="@drawable/icon_notif" />
 
         <TextView
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:text="Notification"
+            android:layout_toEndOf="@id/iconNotif"
+            android:text="My notification"
             android:textSize="18sp" />
 
-    </LinearLayout>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_next"
+            android:layout_alignParentEnd="true"
+            android:layout_width="16dp"
+            android:layout_height="16dp" />
 
-    <LinearLayout
-        android:id="@+id/bantuan"
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/detailInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/notif"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="20dp"
+        android:background="@color/colorWhite"
         android:padding="10dp">
 
         <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/iconInfo"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_alignParentStart="true"
             android:src="@drawable/icon_information" />
 
         <TextView
+            android:layout_centerVertical="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:text="Info aplikasi"
+            android:layout_toEndOf="@id/iconInfo"
+            android:text="My notification"
             android:textSize="18sp" />
 
-    </LinearLayout>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_next"
+            android:layout_alignParentEnd="true"
+            android:layout_width="16dp"
+            android:layout_height="16dp" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/bantuan"
+        android:layout_below="@id/notif"
         android:layout_marginStart="20dp"
+        android:layout_marginTop="274dp"
         android:layout_marginEnd="20dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -181,6 +214,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:text="Log out"
+            android:textColor="#ff6073"
             android:textSize="18sp" />
 
     </LinearLayout>

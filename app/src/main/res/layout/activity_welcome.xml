@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomeActivity">
+    tools:context=".view.activities.WelcomeActivity">
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonStart"
@@ -24,10 +24,10 @@
     <ImageView
         android:id="@+id/logoWelcome"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="200dp"
         android:layout_above="@id/welcome"
         android:scaleType="fitCenter"
-        android:src="@drawable/logo" />
+        android:src="@drawable/amikomup_logo" />
 
     <TextView
         android:id="@+id/subtitleWelcome"

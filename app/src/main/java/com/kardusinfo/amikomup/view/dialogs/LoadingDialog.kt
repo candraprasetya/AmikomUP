@@ -1,4 +1,4 @@
-package com.kardusinfo.amikomup
+package com.kardusinfo.amikomup.view.dialogs
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import com.kardusinfo.amikomup.R
 
 class LoadingDialog : DialogFragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =

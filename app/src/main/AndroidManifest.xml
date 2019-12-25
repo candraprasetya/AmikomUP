@@ -11,25 +11,27 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".DashboardCandra" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".DashboardActivity"/>
-        <activity android:name=".SplashActivity">
-        <activity android:name=".activity_stauts_booking"/>
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".view.dashboard.DashboardDosenActivity"></activity>
+        <activity android:name=".BimbinganUp" />
+        <activity android:name=".StatusBimbinganActivity" />
+        <activity android:name=".view.dashboard.DashboardCandra" />
+        <activity android:name=".view.activities.MainActivity" />
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".view.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".WelcomeActivity" />
-        <activity android:name=".BimbinganActivity" />
+        <activity android:name=".view.firstrun.RegisterActivity" />
+        <activity android:name=".view.firstrun.LoginActivity" />
+        <activity android:name=".view.activities.WelcomeActivity" />
+        <activity android:name=".view.bimbingan.BimbinganActivity" />
     </application>
 
 </manifest>

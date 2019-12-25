@@ -1,12 +1,14 @@
-package com.kardusinfo.amikomup
+package com.kardusinfo.amikomup.view.dashboard
 
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -16,7 +18,11 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.kardusinfo.amikomup.R
+import com.kardusinfo.amikomup.view.activities.WelcomeActivity
+import com.kardusinfo.amikomup.view.bimbingan.BimbinganActivity
 import kotlinx.android.synthetic.main.activity_dashboard_candra.*
+import kotlinx.android.synthetic.main.sign_out_dialog.view.*
 
 
 class DashboardCandra : AppCompatActivity() {
@@ -31,33 +37,74 @@ class DashboardCandra : AppCompatActivity() {
         createAnimation()
 
         val userId = auth.currentUser!!.uid
+
         getUserData(userId)
 
-        buttonSignOut.setOnClickListener {
-            auth.signOut()
-            startActivity(
-                Intent(
-                    this,
-                    WelcomeActivity::class.java
-                ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-            )
-            finish()
+
+        profileUser.setOnClickListener {
+            val mDialogView = LayoutInflater.from(this).inflate(R.layout.sign_out_dialog, null)
+            val mBuilder = AlertDialog.Builder(this)
+                .setView(mDialogView)
+                .setTitle("SIGN OUT")
+                .setCancelable(false)
+            val mAlertDialog = mBuilder.show()
+            mDialogView.buttonYES.setOnClickListener {
+                mAlertDialog.dismiss()
+                auth.signOut()
+                startActivity(
+                    Intent(
+                        this,
+                        WelcomeActivity::class.java
+                    ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                )
+                finish()
+            }
+            mDialogView.buttonNO.setOnClickListener {
+                mAlertDialog.dismiss()
+            }
         }
+
+
+        buttonToBimbingan.setOnClickListener {
+            startActivity(Intent(this, BimbinganActivity::class.java))
+        }
+
+        buttonToCekJadwal.setOnClickListener {
+            Toast.makeText(this, "Fitur Masih Dalam Tahap Pembangunan :)", Toast.LENGTH_SHORT)
+                .show()
+        }
+
     }
 
     private fun createAnimation() {
-        val topToBottom = AnimationUtils.loadAnimation(this, R.anim.top_to_bottom)
-        val scaleToBig = AnimationUtils.loadAnimation(this, R.anim.scale_to_big)
-        val bottomToTop = AnimationUtils.loadAnimation(this, R.anim.bottom_to_top)
-        val btnSignOutAnimation =
-            AnimationUtils.loadAnimation(this, R.anim.signout_button_dashboard)
+        val topToBottom = AnimationUtils.loadAnimation(
+            this,
+            R.anim.top_to_bottom
+        )
+        val scaleToBig = AnimationUtils.loadAnimation(
+            this,
+            R.anim.scale_to_big
+        )
+        val bottomToTop = AnimationUtils.loadAnimation(
+            this,
+            R.anim.bottom_to_top
+        )
+        val btnGreen = AnimationUtils.loadAnimation(
+            this,
+            R.anim.button_green
+        )
+        val btnRed = AnimationUtils.loadAnimation(
+            this,
+            R.anim.button_red
+        )
 
         header.startAnimation(topToBottom)
         profileUser.startAnimation(scaleToBig)
         placeholder.startAnimation(scaleToBig)
         usernameText.startAnimation(bottomToTop)
         nimText.startAnimation(topToBottom)
-        buttonSignOut.startAnimation(btnSignOutAnimation)
+        buttonToBimbingan.startAnimation(btnGreen)
+        buttonToCekJadwal.startAnimation(btnRed)
     }
 
     private fun getUserData(uid: String) {
@@ -98,7 +145,7 @@ class DashboardCandra : AppCompatActivity() {
                             return false
                         }
                     })
-                    .fitCenter()
+                    .centerCrop()
                     .apply(
                         RequestOptions(
 
@@ -111,4 +158,5 @@ class DashboardCandra : AppCompatActivity() {
             }
 
     }
+
 }

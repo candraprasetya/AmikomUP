@@ -1,4 +1,4 @@
-package com.kardusinfo.amikomup
+package com.kardusinfo.amikomup.view.firstrun
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,9 @@ import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.kardusinfo.amikomup.R
+import com.kardusinfo.amikomup.view.dashboard.DashboardCandra
+import com.kardusinfo.amikomup.view.dialogs.LoadingDialog
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -40,9 +43,18 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun createAnimation() {
-        val topToBottom = AnimationUtils.loadAnimation(this, R.anim.top_to_bottom)
-        val scaleToBig = AnimationUtils.loadAnimation(this, R.anim.scale_to_big)
-        val bottomToTop = AnimationUtils.loadAnimation(this, R.anim.bottom_to_top)
+        val topToBottom = AnimationUtils.loadAnimation(
+            this,
+            R.anim.top_to_bottom
+        )
+        val scaleToBig = AnimationUtils.loadAnimation(
+            this,
+            R.anim.scale_to_big
+        )
+        val bottomToTop = AnimationUtils.loadAnimation(
+            this,
+            R.anim.bottom_to_top
+        )
 
         buttonBack.startAnimation(scaleToBig)
         Headline.startAnimation(topToBottom)
@@ -63,7 +75,10 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-        loadingDialog.show(supportFragmentManager, LoadingDialog.TAG)
+        loadingDialog.show(
+            supportFragmentManager,
+            LoadingDialog.TAG
+        )
         firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener {
                 if (it.isSuccessful) {

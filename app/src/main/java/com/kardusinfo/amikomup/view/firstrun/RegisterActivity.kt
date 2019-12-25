@@ -1,4 +1,4 @@
-package com.kardusinfo.amikomup
+package com.kardusinfo.amikomup.view.firstrun
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,6 +9,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.kardusinfo.amikomup.R
+import com.kardusinfo.amikomup.view.dashboard.DashboardCandra
+import com.kardusinfo.amikomup.view.dialogs.LoadingDialog
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {
@@ -30,7 +33,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         buttonToLogin.setOnClickListener {
-            startActivity(Intent(this, DashboardCandra::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }
 
@@ -42,9 +45,18 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun createAnimation() {
-        val topToBottom = AnimationUtils.loadAnimation(this, R.anim.top_to_bottom)
-        val scaleToBig = AnimationUtils.loadAnimation(this, R.anim.scale_to_big)
-        val bottomToTop = AnimationUtils.loadAnimation(this, R.anim.bottom_to_top)
+        val topToBottom = AnimationUtils.loadAnimation(
+            this,
+            R.anim.top_to_bottom
+        )
+        val scaleToBig = AnimationUtils.loadAnimation(
+            this,
+            R.anim.scale_to_big
+        )
+        val bottomToTop = AnimationUtils.loadAnimation(
+            this,
+            R.anim.bottom_to_top
+        )
 
         buttonBack.startAnimation(scaleToBig)
         HeadlineRegister.startAnimation(topToBottom)
@@ -73,7 +85,10 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "Please Fill out All Field", Toast.LENGTH_SHORT).show()
             return
         }
-        loadingDialog.show(supportFragmentManager, LoadingDialog.TAG)
+        loadingDialog.show(
+            supportFragmentManager,
+            LoadingDialog.TAG
+        )
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
                 loadingDialog.dismiss()

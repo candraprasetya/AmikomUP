@@ -1,28 +1,25 @@
-package com.kardusinfo.amikomup
+package com.kardusinfo.amikomup.view.bimbingan
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.firestore.FirebaseFirestore
+import com.kardusinfo.amikomup.R
+import com.kardusinfo.amikomup.adapter.FragmentAdapter
 import kotlinx.android.synthetic.main.activity_bimbingan.*
 
 class BimbinganActivity : AppCompatActivity() {
 
 
     //Deklarasi
-    private val databaseBimbingan = FirebaseFirestore.getInstance()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bimbingan)
 
-        btnBookingState.setOnClickListener {
-        }
-    }
+        viewPagerBimbingan.adapter = FragmentAdapter(supportFragmentManager)
 
-    private fun addBimbingan() {
-        val dataBimbingan = hashMapOf(
-            "nama_dosen" to edtDosen.text
-        )
-    }
 
+        tabs_main.setupWithViewPager(viewPagerBimbingan)
+    }
 }
+

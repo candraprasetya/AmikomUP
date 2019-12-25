@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".view.firstrun.RegisterActivity">
 
     <ScrollView
         android:id="@+id/headerLayoutRegister"
@@ -203,6 +203,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/footerLayoutRegister"
         android:layout_width="match_parent"
+        android:background="#fafafa"
         android:layout_height="wrap_content">
 
 
@@ -212,7 +213,9 @@
             style="@style/Widget.MaterialComponents.Button.TextButton.Dialog.Flush"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -222,7 +225,9 @@
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:layout_toStartOf="@id/buttonRegister"
             android:gravity="start|center_vertical"
             android:text="Already have an account? Sign In"

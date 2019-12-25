@@ -78,11 +78,22 @@
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/dashtext"
         style="@style/TextAppearance.MaterialComponents.Headline5"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:text="Profile Mahasiswa"
         android:textColor="#FAFAFA" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_notif"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="20dp"/>
+
 
     <RelativeLayout
         android:id="@+id/akun"
@@ -180,7 +191,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_toEndOf="@id/iconInfo"
-            android:text="My notification"
+            android:text="Pusat bantuan"
             android:textSize="18sp" />
 
         <ImageView
@@ -196,23 +207,19 @@
         android:id="@+id/logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/notif"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="274dp"
         android:layout_marginEnd="20dp"
-        android:gravity="center_vertical"
+        android:gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal"
+        android:background="r"
         android:padding="10dp">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/icon_logout" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
             android:text="Log out"
             android:textColor="#ff6073"
             android:textSize="18sp" />

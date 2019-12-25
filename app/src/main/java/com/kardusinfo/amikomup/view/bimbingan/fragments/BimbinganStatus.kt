@@ -49,7 +49,7 @@ class BimbinganStatus : Fragment() {
         setupAdapter()
 
         swipeRefreshLayout.setOnRefreshListener {
-            mAdapter.retry()
+            
         }
     }
 

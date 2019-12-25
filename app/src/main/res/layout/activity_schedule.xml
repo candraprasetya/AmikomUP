@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,7 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:background="@drawable/kotak"
-        android:backgroundTint="@color/colorPrimaryDark" />
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:contentDescription="@string/app_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvTitle"
@@ -20,35 +24,44 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:layout_marginTop="20dp"
-        android:text="Schedule"
-        android:textColor="#FAFAFA" />
+        android:text="@string/schedule"
+        android:textColor="#FAFAFA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
-        android:id="@+id/rlBottom"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvSchedule"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/ivAppBar"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAppBar">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSchedule"
+        <RelativeLayout
+            android:id="@+id/rlBottom"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:itemCount="20"
-            tools:listitem="@layout/item_schedule" />
-    </RelativeLayout>
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSchedule"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:itemCount="20"
+                tools:listitem="@layout/item_schedule" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <ImageButton
         android:id="@+id/ibAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/circle_shape_selector"
-        android:src="@drawable/ic_add" />
+        android:contentDescription="@string/imgbutton_desc"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

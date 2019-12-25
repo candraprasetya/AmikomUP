@@ -21,7 +21,7 @@ class DashboardCandra : AppCompatActivity() {
         val userId = auth.currentUser!!.uid
         getUserData(userId)
 
-        btnSchedule.setOnClickListener {
+        mbtnSchedule.setOnClickListener {
             startActivity(
                 Intent(
                     this,

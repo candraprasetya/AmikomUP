@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".view.activities.MainActivity">
 
     <TextView
         android:id="@+id/userEmail"
@@ -23,7 +23,7 @@
         android:id="@+id/buttonSignOut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#F44336"
+        android:backgroundTint="@color/colorAccent"
         android:text="Sign Out"
         app:layout_constraintEnd_toEndOf="@id/userEmail"
         app:layout_constraintStart_toStartOf="@id/userEmail"

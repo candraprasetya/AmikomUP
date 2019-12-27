@@ -31,6 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="text"
+                    android:background="@color/colorWhite"
                     android:maxLength="30"
                     android:maxLines="1" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -50,6 +51,7 @@
                     android:id="@+id/edtCalendar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/colorWhite"
                     android:editable="false"
                     android:inputType="date"
                     android:maxLines="1" />
@@ -73,6 +75,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:editable="false"
+                    android:background="@color/colorWhite"
                     android:inputType="time"
                     android:maxLines="1" />
 
@@ -93,6 +96,7 @@
                     android:layout_height="match_parent"
                     android:gravity="start|top"
                     android:inputType="textMultiLine"
+                    android:background="@color/colorWhite"
                     android:maxLines="5" />
 
             </com.google.android.material.textfield.TextInputLayout>

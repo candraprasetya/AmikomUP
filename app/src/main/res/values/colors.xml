@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#8D8CEC</color>
+    <color name="colorPrimary">#8675f7</color>
     <color name="colorPrimaryDark">#5C5CAA</color>
+    <color name="colorPurple">#8D8CEC</color>
+    <color name="colorPurpleDark">#5C5CAA</color>
+    <color name="colorBlue">#9eb7ff</color>
     <color name="colorAccent">#ff5252</color>
     <color name="colorBlack">#1B1E22</color>
+    <color name="colorGrey">#636363</color>
+    <color name="colorBackground">#f1eefc</color>
     <color name="colorWhite">#fff</color>
     <color name="colorTextBimbingan">#fafafa</color>
 </resources>

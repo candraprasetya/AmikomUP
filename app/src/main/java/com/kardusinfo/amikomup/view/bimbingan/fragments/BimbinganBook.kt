@@ -1,8 +1,6 @@
 package com.kardusinfo.amikomup.view.bimbingan.fragments
 
 
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +12,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.kardusinfo.amikomup.R
 import com.kardusinfo.amikomup.view.dialogs.LoadingDialog
+import com.takisoft.datetimepicker.DatePickerDialog
+import com.takisoft.datetimepicker.TimePickerDialog
+import com.takisoft.datetimepicker.widget.DatePicker
 import kotlinx.android.synthetic.main.fragment_bimbingan_book.*
 import java.util.*
 
@@ -64,6 +65,7 @@ class BimbinganBook : Fragment() {
                 mMonth,
                 mDay
             )
+
             datePickerDialog.setCancelable(false)
             datePickerDialog.setIcon(R.drawable.jadwal)
             datePickerDialog.show()

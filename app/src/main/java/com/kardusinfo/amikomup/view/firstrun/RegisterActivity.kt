@@ -41,7 +41,6 @@ class RegisterActivity : AppCompatActivity() {
             finish()
         }
 
-
     }
 
     private fun createAnimation() {
@@ -66,7 +65,7 @@ class RegisterActivity : AppCompatActivity() {
         layoutInputPassword.startAnimation(topToBottom)
         buttonToLogin.startAnimation(bottomToTop)
         buttonRegister.startAnimation(bottomToTop)
-        layoutNim.startAnimation(topToBottom)
+        layoutInputNim.startAnimation(topToBottom)
     }
 
 
@@ -74,14 +73,15 @@ class RegisterActivity : AppCompatActivity() {
         val username = inputUsername.text.toString()
         val email = inputEmailAddress.text.toString()
         val password = inputPassword.text.toString()
-        val angkatan = inputAngkatan.text.toString()
-        val prodi = inputProdi.text.toString()
-        val nomer = inputNomor.text.toString()
-        val fotoUrl =
-            "http://www.amikom.ac.id/public/fotomhs/20${angkatan}/${angkatan}_${prodi}_${nomer}.jpg"
-        val nim = "${angkatan}.${prodi}.${nomer}"
+        val nim = inputNim.text.toString()
 
-        if (email.isEmpty() || password.isEmpty() || username.isEmpty() || angkatan.isEmpty() || prodi.isEmpty() || nomer.isEmpty()) {
+        val nims = nim.split(".")
+
+        val fotoUrl =
+            "http://www.amikom.ac.id/public/fotomhs/20${nims[0]}/${nims[0]}_${nims[1]}_${nims[2]}.jpg"
+
+        Log.d("POTOKU",fotoUrl)
+        if (email.isEmpty() || password.isEmpty() || username.isEmpty() || nim.isEmpty()) {
             Toast.makeText(this, "Please Fill out All Field", Toast.LENGTH_SHORT).show()
             return
         }

@@ -10,8 +10,16 @@
     <string name="don_t_have_an_accounr_sign_up">Don\'t have an accounr? Sign Up</string>
     <string name="header">Header</string>
     <string name="username">Username</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="nim">Nim (ex : xx.xx.xxxx)</string>
+    <string name="room">5 . 4 . 6</string>
+    <string name="day">Sabtu</string>
+    <string name="class_name">Pemrograman Android Mobile</string>
+    <string name="lecturer">Firman Asharudin, S.Kom, M.Kom</string>
+    <string name="time">07.00 - 08.40</string>
+    <string name="schedule">Schedule</string>
+    <string name="imgbutton_desc">Floating Add Button</string>
+    <string name="app_bar">App Bar</string>
+    <string name="input_schedule">Input Schedule</string>
+    <string name="version_splash">1.4.2 BETA</string>
 </resources>

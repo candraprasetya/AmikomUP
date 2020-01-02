@@ -30,6 +30,11 @@ class LoginActivity : AppCompatActivity() {
             loginEmailPassword()
         }
 
+        resetMyPassword.setOnClickListener {
+            startActivity(Intent(this, ResetPasswordActivity::class.java))
+
+        }
+
 
         buttonToRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
@@ -41,6 +46,7 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
     }
+
 
     private fun createAnimation() {
         val topToBottom = AnimationUtils.loadAnimation(
@@ -57,6 +63,7 @@ class LoginActivity : AppCompatActivity() {
         )
 
         buttonBack.startAnimation(scaleToBig)
+        resetMyPassword.startAnimation(bottomToTop)
         Headline.startAnimation(topToBottom)
         subtitle.startAnimation(topToBottom)
         layoutInputEmailAddress.startAnimation(topToBottom)

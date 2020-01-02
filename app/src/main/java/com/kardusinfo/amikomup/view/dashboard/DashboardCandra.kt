@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.kardusinfo.amikomup.R
 import com.kardusinfo.amikomup.view.activities.WelcomeActivity
 import com.kardusinfo.amikomup.view.bimbingan.BimbinganActivity
+import com.kardusinfo.amikomup.view.schedule.ScheduleActivity
 import kotlinx.android.synthetic.main.activity_dashboard_candra.*
 import kotlinx.android.synthetic.main.sign_out_dialog.view.*
 
@@ -69,9 +70,9 @@ class DashboardCandra : AppCompatActivity() {
             startActivity(Intent(this, BimbinganActivity::class.java))
         }
 
+
         buttonToCekJadwal.setOnClickListener {
-            Toast.makeText(this, "Fitur Masih Dalam Tahap Pembangunan :)", Toast.LENGTH_SHORT)
-                .show()
+            startActivity(Intent(this, ScheduleActivity::class.java))
         }
 
     }

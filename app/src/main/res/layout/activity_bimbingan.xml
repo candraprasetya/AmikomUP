@@ -34,13 +34,13 @@
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs_main"
-            style="@style/Widget.MaterialComponents.TabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#00000000"
             android:hapticFeedbackEnabled="true"
             app:tabIndicatorColor="#00000000"
             app:tabMode="fixed"
+            app:tabIndicator="@drawable/bg_white"
             app:tabSelectedTextColor="@color/colorWhite"
             app:tabTextColor="@color/colorPrimaryDark">
 

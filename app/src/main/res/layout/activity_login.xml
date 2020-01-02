@@ -84,6 +84,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/layoutInputPassword"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:outlineProvider="none"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
@@ -102,6 +103,17 @@
                     android:layout_height="match_parent"
                     android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/resetMyPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="i've forgotten my password!"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@+id/layoutInputPassword"
+                app:layout_constraintTop_toBottomOf="@id/layoutInputPassword" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

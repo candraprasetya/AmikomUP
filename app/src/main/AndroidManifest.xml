@@ -15,7 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.dashboard.DashboardDosenActivity"></activity>
+        <activity android:name=".view.firstrun.FirstRunActivity"></activity>
+        <activity android:name=".view.firstrun.ResetPasswordActivity" />
+        <activity android:name=".view.schedule.ScheduleActivity" />
+        <activity android:name=".view.dashboard.DashboardDosenActivity" />
         <activity android:name=".BimbinganUp" />
         <activity android:name=".StatusBimbinganActivity" />
         <activity android:name=".view.dashboard.DashboardCandra" />

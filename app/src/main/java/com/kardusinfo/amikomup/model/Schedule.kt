@@ -4,10 +4,10 @@ import com.google.firebase.firestore.IgnoreExtraProperties
 
 @IgnoreExtraProperties
 data class Schedule(
-    var myUid: String? = "",
+    var uid: String? = "",
     var class_name: String? = "",
-    var lecturer: String? = "",
+    var lecturer_name: String? = "",
     var day: String? = "",
-    var room: String? = "",
+    var class_room: String? = "",
     var time: String? = ""
 )

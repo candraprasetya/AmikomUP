@@ -20,6 +20,10 @@ class BimbinganActivity : AppCompatActivity() {
 
 
         tabs_main.setupWithViewPager(viewPagerBimbingan)
+
+
     }
+
+
 }
 

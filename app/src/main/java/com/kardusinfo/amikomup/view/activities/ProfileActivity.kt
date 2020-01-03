@@ -1,7 +1,8 @@
-package com.kardusinfo.amikomup
+package com.kardusinfo.amikomup.view.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.kardusinfo.amikomup.R
 
 class ProfileActivity : AppCompatActivity() {
 

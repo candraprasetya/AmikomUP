@@ -105,13 +105,38 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <LinearLayout
+                android:id="@+id/containerUpload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layoutEdtDetail"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUpload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Upload FIle">
+
+                </com.google.android.material.button.MaterialButton>
+
+                <TextView
+                    android:id="@+id/namaFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp" />
+
+
+            </LinearLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBooking"
                 style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_below="@id/layoutEdtDetail"
+                android:layout_below="@id/containerUpload"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:text="Booking now">

@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.firstrun.FirstRunActivity"></activity>
+        <activity android:name=".view.activities.KalenderActivity"></activity>
+        <activity android:name=".view.firstrun.FirstRunActivity" />
         <activity android:name=".view.firstrun.ResetPasswordActivity" />
         <activity android:name=".view.schedule.ScheduleActivity" />
         <activity android:name=".view.dashboard.DashboardDosenActivity" />
@@ -35,6 +36,7 @@
         <activity android:name=".view.firstrun.LoginActivity" />
         <activity android:name=".view.activities.WelcomeActivity" />
         <activity android:name=".view.bimbingan.BimbinganActivity" />
+        <activity android:name=".view.bimbingan.DetailBahasanActivity" />
     </application>
 
 </manifest>

@@ -83,8 +83,7 @@
             android:hint="Room"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilDay"
-            app:startIconDrawable="@drawable/ic_room">
+            app:layout_constraintTop_toBottomOf="@id/tilDay">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tietRoom"

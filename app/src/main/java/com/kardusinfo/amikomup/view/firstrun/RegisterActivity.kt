@@ -2,6 +2,8 @@ package com.kardusinfo.amikomup.view.firstrun
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.WindowManager
 import android.view.animation.AnimationUtils
@@ -13,13 +15,24 @@ import com.kardusinfo.amikomup.R
 import com.kardusinfo.amikomup.view.dashboard.DashboardCandra
 import com.kardusinfo.amikomup.view.dialogs.LoadingDialog
 import kotlinx.android.synthetic.main.activity_register.*
+import java.util.regex.Pattern
 
 class RegisterActivity : AppCompatActivity() {
 
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
     private lateinit var loadingDialog: LoadingDialog
+    private val nimWatcher = object : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {}
 
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            if (!checkNimPattern(s.toString())) {
+                inputNim.error = "Format NIM belum tepat!"
+            }
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -85,6 +98,10 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "Please Fill out All Field", Toast.LENGTH_SHORT).show()
             return
         }
+        if (!checkNimPattern(nim)) {
+            Toast.makeText(this, "Cek Nim yang anda inputkan", Toast.LENGTH_SHORT).show()
+            return
+        }
         loadingDialog.show(
             supportFragmentManager,
             LoadingDialog.TAG
@@ -143,6 +160,13 @@ class RegisterActivity : AppCompatActivity() {
 
     }
 
+    private fun checkNimPattern(nim: String): Boolean {
+        val regex = "[0-9]{2}[.][0-9]{2}[.][0-9]{4}"
+        val pattern = Pattern.compile(regex)
+        val matcher = pattern.matcher(nim)
+
+        return matcher.matches()
+    }
     override fun onBackPressed() {
 
     }

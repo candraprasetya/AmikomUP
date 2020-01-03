@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="#fafafa"
     android:layout_height="match_parent"
-    tools:context=".DashboardActivity">
+    tools:context=".view.activities.ProfileActivity">
 
     <ImageView
         android:id="@+id/headerKotak"
@@ -88,7 +88,7 @@
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/icon_notif"
+        android:src="@drawable/icon_notif_white"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_margin="20dp"/>
@@ -101,6 +101,8 @@
         android:layout_below="@id/headerKotak"
         android:layout_centerVertical="true"
         android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:background="@color/colorWhite"
         android:padding="10dp">
 
@@ -136,6 +138,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/akun"
         android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:background="@color/colorWhite"
         android:padding="10dp">
@@ -174,6 +178,8 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="20dp"
         android:background="@color/colorWhite"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:padding="10dp">
 
         <ImageView

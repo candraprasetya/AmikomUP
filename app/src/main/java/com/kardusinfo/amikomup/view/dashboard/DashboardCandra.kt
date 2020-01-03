@@ -19,6 +19,7 @@ import com.bumptech.glide.request.target.Target
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.kardusinfo.amikomup.R
+import com.kardusinfo.amikomup.view.activities.KalenderActivity
 import com.kardusinfo.amikomup.view.activities.WelcomeActivity
 import com.kardusinfo.amikomup.view.bimbingan.BimbinganActivity
 import com.kardusinfo.amikomup.view.schedule.ScheduleActivity
@@ -73,6 +74,9 @@ class DashboardCandra : AppCompatActivity() {
             startActivity(Intent(this, ScheduleActivity::class.java))
         }
 
+        buttonToKalender.setOnClickListener {
+            startActivity(Intent(this, KalenderActivity::class.java))
+        }
     }
 
     private fun createAnimation() {

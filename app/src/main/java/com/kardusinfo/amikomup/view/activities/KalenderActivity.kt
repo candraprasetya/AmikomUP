@@ -10,6 +10,9 @@ import kotlinx.android.synthetic.main.activity_kalender.*
 class KalenderActivity : AppCompatActivity() {
 
     var images: Array<Int> = arrayOf(
+        R.drawable.ic_september_2019,
+        R.drawable.ic_october_2019,
+        R.drawable.ic_november_2019,
         R.drawable.ic_december_2019,
         R.drawable.ic_january_2020,
         R.drawable.ic_february_2020,
@@ -18,14 +21,10 @@ class KalenderActivity : AppCompatActivity() {
         R.drawable.ic_may_2020,
         R.drawable.ic_june_2020,
         R.drawable.ic_july_2020,
-        R.drawable.ic_august_2020,
-        R.drawable.ic_september_2019,
-        R.drawable.ic_october_2019,
-        R.drawable.ic_november_2019,
-        R.drawable.ic_december_2019
+        R.drawable.ic_august_2020
     )
 
-    var adapter: PagerAdapter = KalenderAdapter(applicationContext, images)
+    var adapter: PagerAdapter = KalenderAdapter(this, images)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

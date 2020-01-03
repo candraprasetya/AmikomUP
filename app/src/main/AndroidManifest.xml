@@ -35,6 +35,7 @@
         <activity android:name=".view.firstrun.LoginActivity" />
         <activity android:name=".view.activities.WelcomeActivity" />
         <activity android:name=".view.bimbingan.BimbinganActivity" />
+        <activity android:name=".view.bimbingan.DetailBahasanActivity"/>
     </application>
 
 </manifest>

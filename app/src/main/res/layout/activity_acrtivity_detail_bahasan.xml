@@ -54,6 +54,12 @@
                 android:text="Dosen"
                 android:textSize="19sp" />
 
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/crdDetail"
+                android:layout_width="match_parent"
+                android:layout_height="390dp"
+                android:layout_marginTop="30dp" />
+
 
         </LinearLayout>
 

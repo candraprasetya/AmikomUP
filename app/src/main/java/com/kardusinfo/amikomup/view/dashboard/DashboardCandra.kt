@@ -99,13 +99,19 @@ class DashboardCandra : AppCompatActivity() {
             R.anim.button_red
         )
 
-        header.startAnimation(topToBottom)
+        val btnYellow = AnimationUtils.loadAnimation(
+            this,
+            R.anim.button_yellow
+        )
+
+
         profileUser.startAnimation(scaleToBig)
         placeholder.startAnimation(scaleToBig)
         usernameText.startAnimation(bottomToTop)
         nimText.startAnimation(topToBottom)
         buttonToBimbingan.startAnimation(btnGreen)
         buttonToCekJadwal.startAnimation(btnRed)
+        buttonToKalender.startAnimation(btnYellow)
     }
 
     private fun getUserData(uid: String) {
@@ -114,6 +120,7 @@ class DashboardCandra : AppCompatActivity() {
             .document(uid)
             .get()
             .addOnSuccessListener { result ->
+                welcomeText.text = "Selamat Datang Kembali, "
                 usernameText.text = result.getString("username")
                 val imageURL = result.getString("profileImage")
                 nimText.text = result.getString("nim")

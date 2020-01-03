@@ -28,6 +28,7 @@ import kotlinx.android.synthetic.main.sign_out_dialog.view.*
 
 class DashboardCandra : AppCompatActivity() {
 
+    //copy
     private val auth = FirebaseAuth.getInstance()
     private val db = FirebaseFirestore.getInstance()
 
@@ -36,9 +37,9 @@ class DashboardCandra : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard_candra)
 
         createAnimation()
-
+//copy
         val userId = auth.currentUser!!.uid
-
+//copy
         getUserData(userId)
 
 
@@ -113,11 +114,11 @@ class DashboardCandra : AppCompatActivity() {
         buttonToCekJadwal.startAnimation(btnRed)
         buttonToKalender.startAnimation(btnYellow)
     }
-
+//copy
     private fun getUserData(uid: String) {
 
         db.collection("users")
-            .document(uid)
+            .document(uid)//.collection("bimbingan")
             .get()
             .addOnSuccessListener { result ->
                 welcomeText.text = "Selamat Datang Kembali, "
@@ -125,6 +126,7 @@ class DashboardCandra : AppCompatActivity() {
                 val imageURL = result.getString("profileImage")
                 nimText.text = result.getString("nim")
 
+                //hapus
                 Glide.with(this)
                     .load(imageURL)
                     .addListener(object : RequestListener<Drawable> {
@@ -164,6 +166,7 @@ class DashboardCandra : AppCompatActivity() {
             .addOnFailureListener { exception ->
                 Log.w("DATABASE GET", "Error getting documents.", exception)
             }
+    //hpuas
 
     }
 

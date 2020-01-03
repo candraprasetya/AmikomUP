@@ -30,7 +30,7 @@
             android:id="@+id/profile_image"
             android:layout_width="96dp"
             android:layout_height="96dp"
-            android:src="@drawable/profile"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -214,7 +214,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal"
-        android:background="r"
+
         android:padding="10dp">
 
 

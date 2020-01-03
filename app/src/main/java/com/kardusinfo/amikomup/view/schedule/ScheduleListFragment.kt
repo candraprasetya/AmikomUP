@@ -2,6 +2,7 @@ package com.kardusinfo.amikomup.view.schedule
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,9 +31,15 @@ class ScheduleListFragment : Fragment(), AnkoLogger {
     private lateinit var mAdapter: FirestorePagingAdapter<Schedule, ScheduleViewHolder>
     private val mFirestore = FirebaseFirestore.getInstance()
     private val mUserId = FirebaseAuth.getInstance().currentUser!!.uid
-    private val mBimbinganCollection =
-        mFirestore.collection("users").document(mUserId).collection("jadwal")
-    private val mQuery = mBimbinganCollection.orderBy("time", Query.Direction.ASCENDING)
+    private val mScheduleCollection = mFirestore.collection("users").document(mUserId).collection("jadwal")
+    private var mQuery = mScheduleCollection.orderBy("time", Query.Direction.ASCENDING)
+    private val mQuerySenin = mScheduleCollection.whereEqualTo("day", "Senin")
+    private val mQuerySelasa = mScheduleCollection.whereEqualTo("day", "Selasa")
+    private val mQueryRabu = mScheduleCollection.whereEqualTo("day", "Rabu")
+    private val mQueryKamis = mScheduleCollection.whereEqualTo("day", "Kamis")
+    private val mQueryJumat = mScheduleCollection.whereEqualTo("day", "Jumat")
+    private val mQueryJum_at = mScheduleCollection.whereEqualTo("day", "Jum'at")
+    private val mQuerySabtu = mScheduleCollection.whereEqualTo("day", "Sabtu")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,16 +65,48 @@ class ScheduleListFragment : Fragment(), AnkoLogger {
         rvSchedule.setHasFixedSize(true)
         rvSchedule.layoutManager = LinearLayoutManager(requireContext())
 
-        setupAdapter()
+        setupAdapter(mQuery)
 
 
         srlSchedule.setColorSchemeResources(R.color.colorPrimary)
         srlSchedule.setOnRefreshListener {
             mAdapter.refresh()
         }
+        btnAll.setOnClickListener {
+            setupAdapter(mQuery)
+            mAdapter.refresh()
+        }
+        btnSenin.setOnClickListener {
+            setupAdapter(mQuerySenin)
+            mAdapter.refresh()
+        }
+        btnSelasa.setOnClickListener {
+            setupAdapter(mQuerySelasa)
+            mAdapter.refresh()
+        }
+        btnRabu.setOnClickListener {
+            setupAdapter(mQueryRabu)
+            mAdapter.refresh()
+        }
+        btnKamis.setOnClickListener {
+            setupAdapter(mQueryKamis)
+            mAdapter.refresh()
+        }
+        btnJumat.setOnClickListener {
+            setupAdapter(mQueryJumat)
+            mAdapter.refresh()
+        }
+        btnJumat.setOnClickListener {
+            setupAdapter(mQueryJum_at)
+            mAdapter.refresh()
+        }
+        btnSabtu.setOnClickListener {
+            setupAdapter(mQuerySabtu)
+            mAdapter.refresh()
+        }
     }
 
-    private fun setupAdapter() {
+    private fun setupAdapter(Querynya: Query) {
 
         // Init Paging Configuration
         val config = PagedList.Config.Builder()
@@ -79,20 +118,29 @@ class ScheduleListFragment : Fragment(), AnkoLogger {
         // Init Adapter Configuration
         val options = FirestorePagingOptions.Builder<Schedule>()
             .setLifecycleOwner(this)
-            .setQuery(mQuery, config, Schedule::class.java)
+            .setQuery(Querynya, config, Schedule::class.java)
             .build()
+
 
         // Instantiate Paging Adapter
         mAdapter = object : FirestorePagingAdapter<Schedule, ScheduleViewHolder>(options) {
             override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScheduleViewHolder =
                 ScheduleViewHolder(layoutInflater.inflate(R.layout.item_schedule, parent, false))
 
-            override fun onBindViewHolder(viewHolder: ScheduleViewHolder, position: Int, schedule: Schedule) {
+            override fun onBindViewHolder(
+                viewHolder: ScheduleViewHolder,
+                position: Int,
+                schedule: Schedule
+            ) {
                 // Bind to ViewHolder
                 viewHolder.bind(schedule)
             }
 
-            override fun onLoadStateChanged(type: PagedList.LoadType, state: PagedList.LoadState, error: Throwable?) {
+            override fun onLoadStateChanged(
+                type: PagedList.LoadType,
+                state: PagedList.LoadState,
+                error: Throwable?
+            ) {
                 super.onLoadStateChanged(type, state, error)
                 info("LOADING STATE: ${type.name} ${state.name}")
                 when (type) {

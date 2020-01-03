@@ -89,6 +89,8 @@ class BimbinganStatus : Fragment(), AnkoLogger {
             override fun onBindViewHolder(viewHolder: BimbinganViewHolder, position: Int, bimbingan: Bimbingan) {
                 // Bind to ViewHolder
                 viewHolder.bind(bimbingan)
+
+
             }
 
             override fun onLoadStateChanged(type: PagedList.LoadType, state: PagedList.LoadState, error: Throwable?) {

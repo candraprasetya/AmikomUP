@@ -1,11 +1,12 @@
 package com.kardusinfo.amikomup.viewholder
 
+import android.content.Intent
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.kardusinfo.amikomup.R
 import com.kardusinfo.amikomup.model.Bimbingan
-import kotlinx.android.synthetic.main.item_bimbingan.*
+import com.kardusinfo.amikomup.view.bimbingan.DetailBahasanActivity
 import kotlinx.android.synthetic.main.item_bimbingan.view.*
 
 class BimbinganViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -16,12 +17,17 @@ class BimbinganViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private var tanggalBimbingan: TextView = itemView.findViewById(R.id.bimbinganTanggalText)
 
     fun bind(bimbingan: Bimbingan) {
-        with(itemView){
+        with(itemView) {
             bimbinganDosenText.text = "sadfas"
+            itemView.setOnClickListener {
+                val intent = Intent(context, DetailBahasanActivity::class.java)
+                context.startActivity(intent)
+            }
         }
         topikBimbingan.text = bimbingan.topik
         dosenBimbingan.text = bimbingan.dosen
         waktuBimbingan.text = bimbingan.waktu
         tanggalBimbingan.text = bimbingan.tanggal
+
     }
 }

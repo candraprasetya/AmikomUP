@@ -21,6 +21,7 @@ class BimbinganViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             bimbinganDosenText.text = "sadfas"
             itemView.setOnClickListener {
                 val intent = Intent(context, DetailBahasanActivity::class.java)
+                intent.putExtra("BIMBINGAN", bimbingan)
                 context.startActivity(intent)
             }
         }

@@ -1,6 +1,8 @@
 package com.kardusinfo.amikomup.view.bimbingan.fragments
 
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,6 +17,7 @@ import com.kardusinfo.amikomup.view.dialogs.LoadingDialog
 import com.takisoft.datetimepicker.DatePickerDialog
 import com.takisoft.datetimepicker.TimePickerDialog
 import com.takisoft.datetimepicker.widget.DatePicker
+import kotlinx.android.synthetic.main.activity_bimbingan.*
 import kotlinx.android.synthetic.main.fragment_bimbingan_book.*
 import java.util.*
 
@@ -35,9 +38,28 @@ class BimbinganBook : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
+
+
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bimbingan_book, container, false)
+
+
+
+        tabs_main.setupWithViewPager(viewPagerBimbingan)
+
+        btnUpload.setOnClickListener {
+            val intent= Intent().setType("*/*").setAction(Intent.ACTION_GET_CONTENT)
+            startActivityForResult(Intent.createChooser(intent,"Pilih File"),111)
+        }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, file: Intent?) {
+        super.onActivityResult(requestCode, resultCode, file)
+        if (requestCode==111 && resultCode== Activity.RESULT_OK){
+            val SelectedFile=file!!.data
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

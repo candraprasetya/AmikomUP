@@ -15,16 +15,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.activities.KalenderActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".view.firstrun.FirstRunActivity" />
         <activity android:name=".view.firstrun.ResetPasswordActivity" />
         <activity android:name=".view.schedule.ScheduleActivity" />
         <activity android:name=".view.dashboard.DashboardDosenActivity" />
-        <activity android:name=".BimbinganUp" />
-        <activity android:name=".StatusBimbinganActivity" />
         <activity android:name=".view.dashboard.DashboardCandra" />
         <activity android:name=".view.activities.MainActivity" />
-        <activity android:name=".DashboardActivity" />
         <activity android:name=".view.activities.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,7 +33,7 @@
         <activity android:name=".view.firstrun.LoginActivity" />
         <activity android:name=".view.activities.WelcomeActivity" />
         <activity android:name=".view.bimbingan.BimbinganActivity" />
-        <activity android:name=".view.bimbingan.DetailBahasanActivity" />
+        <activity android:name=".view.bimbingan.DetailBahasanActivity"/>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.kardusinfo.amikomup.model
 
 import com.google.firebase.firestore.IgnoreExtraProperties
+import java.io.Serializable
 
 @IgnoreExtraProperties
 data class Bimbingan(
@@ -11,4 +12,4 @@ data class Bimbingan(
     var tanggal: String? = "",
     var waktu: String? = "",
     var status: String? = ""
-)
+) :Serializable

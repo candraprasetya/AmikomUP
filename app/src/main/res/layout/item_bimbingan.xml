@@ -4,10 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
-    android:background="@drawable/bg_white"
-    android:orientation="vertical"
-    android:padding="10dp">
 
+    android:background="@drawable/bg_white">
 
     <TextView
         android:id="@+id/bimbinganTopikText"

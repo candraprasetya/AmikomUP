@@ -8,9 +8,11 @@ import com.google.firebase.firestore.DocumentId
 import com.google.firebase.firestore.FirebaseFirestore
 import com.kardusinfo.amikomup.R
 import kotlinx.android.synthetic.main.activity_acrtivity_detail_bahasan.*
+import kotlinx.android.synthetic.main.activity_bimbingan.*
 import kotlinx.android.synthetic.main.activity_dashboard_candra.*
 import kotlinx.android.synthetic.main.activity_schedule.*
 import kotlinx.android.synthetic.main.sign_out_dialog.view.*
+import java.io.File
 
 class DetailBahasanActivity : AppCompatActivity() {
 
@@ -37,6 +39,7 @@ class DetailBahasanActivity : AppCompatActivity() {
                 txtDate.text = result.getString("tanggal")
                 txtBahasan.text = result.getString("topik")
                 txtDosen.text = result.getString("waktu")
+                val fileURl = result.getString("link")
 
             }.addOnFailureListener { exception ->
                 Log.w("DATABASE GET", "Error getting documents.", exception)

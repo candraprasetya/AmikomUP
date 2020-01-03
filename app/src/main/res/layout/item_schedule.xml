@@ -24,7 +24,7 @@
             android:paddingBottom="10dp"
             android:text="@string/room"
             android:textColor="#fafafa"
-            android:textSize="32sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,12 +47,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:paddingTop="20dp"
+            android:paddingTop="15dp"
             android:paddingBottom="5dp"
             android:text="@string/class_name"
             android:textAlignment="center"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="32sp"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvRoom" />
@@ -64,7 +64,7 @@
             android:layout_centerHorizontal="true"
             android:text="@string/lecturer"
             android:textAlignment="center"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvClassName" />
@@ -73,7 +73,7 @@
             android:id="@+id/tvTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/bg_gradient"
             android:paddingLeft="30dp"
             android:paddingTop="10dp"
@@ -81,7 +81,7 @@
             android:paddingBottom="10dp"
             android:text="@string/time"
             android:textColor="#fafafa"
-            android:textSize="20sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvTeacher" />
     </androidx.constraintlayout.widget.ConstraintLayout>

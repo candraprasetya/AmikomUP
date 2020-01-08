@@ -155,7 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_toEndOf="@id/iconNotif"
-            android:text="Nim"
+            android:text="Pusat Bantuan"
             android:id="@+id/nim"
             android:textSize="18sp" />
 
@@ -168,41 +168,6 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/detailInfo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/notif"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="20dp"
-        android:background="@color/colorWhite"
-        android:padding="10dp">
-
-        <ImageView
-            android:layout_centerVertical="true"
-            android:id="@+id/iconInfo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentStart="true"
-            android:src="@drawable/icon_information" />
-
-        <TextView
-            android:layout_centerVertical="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_toEndOf="@id/iconInfo"
-            android:text="Pusat bantuan"
-            android:textSize="18sp" />
-
-        <ImageView
-            android:layout_centerVertical="true"
-            android:src="@drawable/icon_next"
-            android:layout_alignParentEnd="true"
-            android:layout_width="16dp"
-            android:layout_height="16dp" />
-
-    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/logout"
@@ -219,6 +184,7 @@
 
 
         <TextView
+            android:id="@+id/logut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Log out"

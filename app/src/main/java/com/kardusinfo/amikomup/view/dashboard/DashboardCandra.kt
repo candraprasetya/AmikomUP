@@ -18,6 +18,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.Target
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.kardusinfo.amikomup.ProfileActivity
 import com.kardusinfo.amikomup.R
 import com.kardusinfo.amikomup.view.activities.KalenderActivity
 import com.kardusinfo.amikomup.view.activities.WelcomeActivity
@@ -42,26 +43,32 @@ class DashboardCandra : AppCompatActivity() {
 
 
         profileUser.setOnClickListener {
-            val mDialogView = LayoutInflater.from(this).inflate(R.layout.sign_out_dialog, null)
-            val mBuilder = AlertDialog.Builder(this)
-                .setView(mDialogView)
-                .setTitle("SIGN OUT")
-                .setCancelable(false)
-            val mAlertDialog = mBuilder.show()
-            mDialogView.buttonYES.setOnClickListener {
-                mAlertDialog.dismiss()
-                auth.signOut()
-                startActivity(
-                    Intent(
-                        this,
-                        WelcomeActivity::class.java
-                    ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-                )
-                finish()
-            }
-            mDialogView.buttonNO.setOnClickListener {
-                mAlertDialog.dismiss()
-            }
+            startActivity(
+                Intent(
+                    this,
+                    ProfileActivity::class.java
+                ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+            )
+//            val mDialogView = LayoutInflater.from(this).inflate(R.layout.sign_out_dialog, null)
+//            val mBuilder = AlertDialog.Builder(this)
+//                .setView(mDialogView)
+//                .setTitle("SIGN OUT")
+//                .setCancelable(false)
+//            val mAlertDialog = mBuilder.show()
+//            mDialogView.buttonYES.setOnClickListener {
+//                mAlertDialog.dismiss()
+//                auth.signOut()
+//                startActivity(
+//                    Intent(
+//                        this,
+//                        WelcomeActivity::class.java
+//                    ).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+//                )
+//                finish()
+//            }
+//            mDialogView.buttonNO.setOnClickListener {
+//                mAlertDialog.dismiss()
+//            }
         }
 
 
